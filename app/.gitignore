@@ -60,3 +60,6 @@ profile*
 .env
 *.sqlite
 tmp/
+
+.cache
+.config
