@@ -1,11 +1,10 @@
 version: "2"
 
 services:
-  app: # Имя сервиса
+  app:
+    image: "evseny/devops-for-programmers-project-74"
     build:
       context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./app:/app
+      dockerfile: Docker.production
+    command: npm run test
+
