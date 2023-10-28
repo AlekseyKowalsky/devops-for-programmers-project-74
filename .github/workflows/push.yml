@@ -1,0 +1,14 @@
+name: app image delivery
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: make ci
+      - run: make build
+      - run: make push
