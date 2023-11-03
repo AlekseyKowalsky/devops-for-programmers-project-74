@@ -7,4 +7,4 @@ COPY app/package-lock.json .
 
 RUN npm ci
 
-CMD npm run dev
+CMD ["npm", "run", "dev"]
