@@ -1,3 +1,6 @@
+install:
+	docker-compose run app npm install
+
 dev:
 	docker-compose up
 
