@@ -5,7 +5,7 @@ services:
     image: "evseny/devops-for-programmers-project-74"
     build:
       context: .
-      dockerfile: Docker.production
+      dockerfile: Dockerfile.production
     environment:
       DATABASE_HOST: db
       DATABASE_NAME: postgres
