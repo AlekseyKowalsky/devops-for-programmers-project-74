@@ -12,7 +12,7 @@ services:
       - ./app:/app
 
   caddy:
-    image: caddy:latest
+    image: caddy:2.7.5
     restart: unless-stopped
     ports:
       - "80:80"
