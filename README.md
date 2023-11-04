@@ -4,20 +4,20 @@
 
 
 ## Getting start
-### Dependencies installation
+### Local dependencies installation
 ```bash
-$ make install
+$ make compose-install
 ```
 
 ### Local development
-Starts the app as a docker container with SQLite as a database.
+Starts the app as a docker container.
 ```bash
-$ make dev
+$ make compose-dev
 ```
 ### Integration testing
 Starts tests within a docker container connected to a Postgres instance.
 ```bash
-$ make ci
+$ make compose-ci
 ```
 ## App image delivery:
 The app image name: `evseny/devops-for-programmers-project-74`
@@ -26,9 +26,9 @@ The app image on Dockerhub: https://hub.docker.com/repository/docker/evseny/devo
 
 Build image
 ```bash
-$ make build
+$ make compose-build
 ```
 Push image
 ```bash
-$ make push
+$ make compose-push
 ```

@@ -15,8 +15,8 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: test the app
-        run: make ci
+        run: make compose-ci
       - name: build the app image
-        run: make build
+        run: make compose-build
       - name: push the app image
-        run: make push
+        run: make compose-push

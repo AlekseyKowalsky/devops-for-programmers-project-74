@@ -1,14 +1,14 @@
-install:
+compose-install:
 	docker-compose run app npm install
 
-dev:
+compose-dev:
 	docker-compose up
 
-ci:
+compose-ci:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
-build:
+compose-build:
 	docker-compose -f docker-compose.yml build app
 
-push:
+compose-push:
 	docker-compose -f docker-compose.yml push app
