@@ -17,9 +17,9 @@ services:
     env_file:
       - ./config/.env.ci
     environment:
-      - POSTGRES_DB=${DATABASE_NAME}
-      - POSTGRES_USER=${DATABASE_USERNAME}
-      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
     restart: always
     volumes:
       - db-data:/var/lib/postgresql/data
