@@ -6,21 +6,20 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    environment:
-      DATABASE_HOST: db
-      DATABASE_NAME: postgres
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: password
+    env_file:
+      - ./config/.env.ci
     command: bash -c 'sleep 3 && npm run test'
     depends_on:
       - db
 
   db:
     image: postgres:16
+    env_file:
+      - ./config/.env.ci
     environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
     restart: always
     volumes:
       - db-data:/var/lib/postgresql/data
